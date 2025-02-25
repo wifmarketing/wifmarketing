@@ -55,6 +55,7 @@ header {
 
 .logo img {
     height: 50px;
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -79,6 +80,58 @@ nav ul li a:hover {
     color: #000;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 999;
+
+}
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.mobile-nav ul li {
+    padding: 10px 0;
+}
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mobile-nav ul li a:hover {
+    color: #000;
+}
+
 /* Sticky Navbar Effect */
 .sticky {
     background: var(--primary-color) !important;
@@ -95,6 +148,65 @@ nav ul li a:hover {
 .sticky .social-icons a {
     color: var(--bg-color);
 }
+.sticky .logo img {
+    content: url('../assets/logo.jpg'); /* Change logo when sticky */
+}
+/* Mobile Media Query */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    .hamburger span {
+       
+        background-color: var(--bg-color);
+    }
+
+    .mobile-nav {
+        display: none; /* Mobile nav should be hidden by default */
+        position: absolute; /* Position it absolutely to overlay over the content */
+        top: 60px; /* Adjust position */
+        left: 0;
+        width: 100%;
+        background: var(--bg-color); /* Same background as navbar */
+        text-align: center;
+        padding: 10px 0;
+        z-index: 999; /* Ensure it's above other content */
+    }
+     /* Show mobile-nav when the 'active' class is added */
+     .mobile-nav.active {
+        display: block;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav ul li {
+        padding: 10px 0;
+    }
+
+    .mobile-nav ul li a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .mobile-nav ul li a:hover {
+        color: #000;
+    }
+
+
+
+  
+    
+}
 
 /* ====================== */
 
@@ -104,8 +216,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: space-between;
     /* background: url('../assets/background/02.jpg') center/cover no-repeat; */
-    height: 90vh;
-    padding: 0 6%;
+    padding: 20px 6%;
     color: var(--primary-color);
     gap: 0px 50px;
 }
@@ -117,6 +228,7 @@ nav ul li a:hover {
 .hero-content h3 {
     font-size: 24px;
     font-weight: 600;
+    text-align: center;
 }
 
 .hero-content h1 {

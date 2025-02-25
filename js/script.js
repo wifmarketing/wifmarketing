@@ -1,11 +1,26 @@
-window.addEventListener("scroll", function () {
-    let navbar = document.getElementById("navbar");
-    if (window.scrollY > 50) {
+// Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const mobileNav = document.getElementById("mobile-nav");
+
+hamburger.addEventListener("click", () => {
+    // Toggle the 'active' class on the mobile nav
+    mobileNav.classList.toggle("active");
+});
+
+// Sticky Header and Logo Change
+window.onscroll = function() {stickyHeader()};
+
+const navbar = document.getElementById("navbar");
+const logo = document.getElementById("logo");
+
+function stickyHeader() {
+    if (window.pageYOffset > 50) {
         navbar.classList.add("sticky");
     } else {
         navbar.classList.remove("sticky");
     }
-});
+}
+
 
 const testimonials = [
     {
