@@ -428,11 +428,14 @@ nav ul li a:hover {
 
     .about-content,
     .about-image {
-        width: 100%;
+        width: 80%;
+        margin-bottom: 40px;
     }
 
     .floating-img {
         left: 50%;
+        top: 30%;
+        width: 80px;
         transform: translate(-50%, -50%);
     }
 }
@@ -543,15 +546,312 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    .working-process {
+        clip-path: polygon(0 4%, 100% 0, 100% 100%, 0% 100%);
+    }
     .process-steps {
         flex-direction: column;
         align-items: center;
     }
 
     .step-card {
-        width: 100%;
+        width: 80%;
+    }
+
+}
+
+/* ================= */
+
+/* Section Styling */
+.marketing-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00509d;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Strategy Container */
+.strategy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* First section: Image on the right */
+.strategy-one {
+    flex-direction: row;
+}
+
+/* Second section: Image on the left */
+/* .strategy-two {
+    flex-direction: row-reverse;
+} */
+
+/* Small Title */
+.small-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00509d;
+    /* Primary Color */
+    margin-bottom: 8px;
+}
+
+/* Main Title */
+.strategy-content h3 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+/* Strategy Content */
+.strategy-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Strategy List */
+.strategy-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.strategy-content ul li {
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    color: #00509d;
+    /* Primary Color */
+    font-weight: bold;
+}
+
+.strategy-content ul li::before {
+    content: "✔";
+    color: #ffcc00;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Learn More Button */
+.learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    /* Primary Color */
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    background-color: #003f7f;
+}
+
+/* Strategy Image */
+.strategy-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* Align image to the right */
+}
+
+.strategy-two .strategy-image {
+    justify-content: flex-start;
+    /* Align image to the left */
+}
+
+.strategy-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    animation: floatUpDown 4s infinite ease-in-out;
+    object-fit: cover;
+}
+
+/* Image Floating Animation */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .strategy {
+        flex-direction: column !important;
+        text-align: left;
+    }
+
+    .strategy-one {
+        flex-direction: column-reverse !important;
+    }
+
+    .strategy-content {
+        text-align: left;
+    }
+
+    .strategy-two .strategy-image,
+    .strategy-one .strategy-image {
+        justify-content: center;
+    }
+}
+
+/* ------------------------------ */
+
+/* Section Styling */
+.case-study-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: left;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00509d;
+    margin-bottom: 40px;
+}
+
+/* Before & After Section */
+.case-study-results {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.before-after {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.before-after:hover {
+    transform: translateY(-5px);
+}
+
+/* Before & After Titles */
+.result-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d9534f; /* Red for before */
+    margin-bottom: 10px;
+}
+
+.after {
+    color: #28a745; /* Green for after */
+}
+
+/* Result List */
+.result-list {
+    list-style: none;
+    padding: 0;
+}
+
+.result-list li {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.after-list li {
+    font-weight: bold;
+    color: #00509d;
+}
+
+/* Highlight Styling */
+.highlight {
+    color: #00509d;
+    font-weight: bold;
+}
+
+/* Insights Section */
+.case-study-insights {
+    margin-top: 30px;
+}
+
+.insights-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00509d;
+    margin-bottom: 20px;
+}
+
+/* Insights Grid */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Insight Card */
+.insight-card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+}
+
+.insight-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00509d;
+    margin-bottom: 10px;
+}
+
+.insight-card p {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .case-study-results {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
 
 
 /* ========== */
@@ -648,6 +948,11 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .testimonial-container {
         padding: 30px;
+        width: 80%;
+    }
+
+    .testimonial-section {
+        padding: 40px 6%;
     }
 
     .testimonial-text {
@@ -663,12 +968,15 @@ nav ul li a:hover {
         height: 40px;
     }
 }
+
 /* =============== */
 
 /* Footer Section */
 .footer-section {
-    background-color: #00509d; /* Primary Color */
-    color: #f6eedf; /* Background Color for Text */
+    background-color: #00509d;
+    /* Primary Color */
+    color: #f6eedf;
+    /* Background Color for Text */
     padding: 60px 6% 10px 6%;
     text-align: center;
 }
@@ -696,12 +1004,14 @@ nav ul li a:hover {
 .footer-description {
     font-size: 16px;
     margin-bottom: 15px;
-    text-align: left; /* Left-aligned text */
+    text-align: left;
+    /* Left-aligned text */
 }
 
 .footer-social {
     display: flex;
-    justify-content: flex-start; /* Left-aligned icons */
+    justify-content: flex-start;
+    /* Left-aligned icons */
     gap: 10px;
 }
 
@@ -740,7 +1050,8 @@ nav ul li a:hover {
 
 .footer-links li {
     margin: 8px 0;
-    text-align: left; /* Left-aligned list items */
+    text-align: left;
+    /* Left-aligned list items */
 }
 
 .footer-links a {
@@ -816,17 +1127,20 @@ nav ul li a:hover {
         text-align: left;
     }
 
-    .footer-left, .footer-center, .footer-right {
+    .footer-left,
+    .footer-center,
+    .footer-right {
         max-width: 100%;
     }
 
     .footer-social {
-        justify-content: center; /* Centered icons on mobile */
+        justify-content: center;
+        /* Centered icons on mobile */
     }
 
-    .footer-right .footer-info {
+    /* .footer-right .footer-info {
         align-items: flex-start;
-    }
+    } */
 
     .footer-card {
         flex-direction: row;
