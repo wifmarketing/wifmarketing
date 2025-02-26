@@ -1,12 +1,12 @@
+
 // Hamburger Menu Toggle
-const hamburger = document.getElementById("hamburger");
-const mobileNav = document.getElementById("mobile-nav");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("nav ul");
 
 hamburger.addEventListener("click", () => {
-    // Toggle the 'active' class on the mobile nav
-    mobileNav.classList.toggle("active");
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
 });
-
 // Sticky Header and Logo Change
 window.onscroll = function() {stickyHeader()};
 

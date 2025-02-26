@@ -80,57 +80,6 @@ nav ul li a:hover {
     color: #000;
 }
 
-/* Hamburger Menu Styles */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-}
-
-.mobile-nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: var(--bg-color);
-    text-align: center;
-    padding: 10px 0;
-    z-index: 999;
-
-}
-.mobile-nav.active {
-    display: block;
-}
-
-.mobile-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.mobile-nav ul li {
-    padding: 10px 0;
-}
-
-.mobile-nav ul li a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.mobile-nav ul li a:hover {
-    color: #000;
-}
 
 /* Sticky Navbar Effect */
 .sticky {
@@ -151,62 +100,104 @@ nav ul li a:hover {
 .sticky .logo img {
     content: url('../assets/logo.jpg'); /* Change logo when sticky */
 }
+
+/* When Navbar is sticky, the hamburger bars should have bg-color as var(--bg-color) */
+.sticky .hamburger.active .bar {
+    background-color: var(--bg-color); /* Change hamburger bar color to bg-color when sticky */
+}
 /* Mobile Media Query */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 12px;
+    }
+
+    .contact-info span {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        margin-left: 15px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--bg-color);
+        padding: 20px;
+        width: 200px;
+        border: 1px solid #ccc;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    nav ul.show {
+        display: flex;
+        width: 90%;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        background: none;
+        border: none;
+    }
+
+    .hamburger.active .bar {
+        background-color: var(--primary-color);
+    }
+
+    .hamburger .bar {
+        width: 30px;
+        height: 4px;
+        background-color: var(--primary-color);
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+    .sticky nav ul li a {
+        color: var(--primary-color);
+    }
+    .sticky .hamburger .bar {
+        background-color: var(--bg-color); /* Change hamburger bar color to bg-color when sticky */
+    }
+    .logo img {
+        height: 40px;
+    }
+}
+
+/* Mobile Header Toggle Button */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+/* Mobile Media Query
 @media (max-width: 768px) {
     nav ul {
         display: none;
     }
 
-    .hamburger {
-        display: flex;
-    }
-    .hamburger span {
-       
-        background-color: var(--bg-color);
-    }
-
-    .mobile-nav {
-        display: none; /* Mobile nav should be hidden by default */
-        position: absolute; /* Position it absolutely to overlay over the content */
-        top: 60px; /* Adjust position */
-        left: 0;
-        width: 100%;
-        background: var(--bg-color); /* Same background as navbar */
-        text-align: center;
-        padding: 10px 0;
-        z-index: 999; /* Ensure it's above other content */
-    }
-     /* Show mobile-nav when the 'active' class is added */
-     .mobile-nav.active {
-        display: block;
-    }
-
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-nav ul li {
-        padding: 10px 0;
-    }
-
-    .mobile-nav ul li a {
-        text-decoration: none;
-        color: var(--primary-color);
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .mobile-nav ul li a:hover {
-        color: #000;
-    }
-
-
-
-  
-    
-}
+} */
 
 /* ====================== */
 
@@ -823,6 +814,7 @@ nav ul li a:hover {
 
     .strategy-content {
         text-align: left;
+        padding: 0 6%;
     }
 
     .strategy-two .strategy-image,
